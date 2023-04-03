@@ -1,0 +1,9 @@
+def dep_version = [:]
+
+dep_version.hilt = "2.43.1"
+
+dep_version.lifecycle = "2.5.1"
+dep_version.compose = "2.5.1"
+dep_version.hilt = "2.44"
+
+ext.dep_versions = dep_version
