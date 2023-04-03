@@ -5,5 +5,6 @@ dep_versions.hilt = "2.43.1"
 dep_versions.lifecycle = "2.5.1"
 dep_versions.compose = "2.5.1"
 dep_versions.hilt = "2.44"
+dep_versions.room_version = "2.5.1"
 
 ext.dep_versions = dep_versions
