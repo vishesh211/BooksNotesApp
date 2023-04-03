@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id "kotlin-kapt"
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -60,4 +62,19 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$dep_versions.lifecycle"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$dep_versions.lifecycle"
+    // Annotation processor
+    kapt "androidx.lifecycle:lifecycle-compiler:$dep_versions.lifecycle"
+
+    //dagger-hilt
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
+}
+// Allow references to generated code
+kapt {
+    correctErrorTypes true
 }
