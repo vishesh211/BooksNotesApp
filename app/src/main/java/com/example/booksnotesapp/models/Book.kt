@@ -1,4 +1,4 @@
-package com.example.booksnotesapp.data
+package com.example.booksnotesapp.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
