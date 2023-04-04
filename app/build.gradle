@@ -73,6 +73,14 @@ dependencies {
     //dagger-hilt
     implementation "com.google.dagger:hilt-android:$dep_versions.hilt"
     kapt "com.google.dagger:hilt-compiler:$dep_versions.hilt"
+
+    //room
+    implementation "androidx.room:room-runtime:$dep_versions.room_version"
+    annotationProcessor "androidx.room:room-compiler:$dep_versions.room_version"
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:$dep_versions.room_version"
+
 }
 // Allow references to generated code
 kapt {
