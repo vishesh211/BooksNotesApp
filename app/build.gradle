@@ -74,6 +74,10 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$dep_versions.hilt"
     kapt "com.google.dagger:hilt-compiler:$dep_versions.hilt"
 
+    //Hilt Navigation Compose
+    implementation "androidx.hilt:hilt-navigation-compose:$dep_versions.hilt_navigation_compose_version"
+
+
     //room
     implementation "androidx.room:room-runtime:$dep_versions.room_version"
     implementation "androidx.room:room-ktx:$dep_versions.room"
