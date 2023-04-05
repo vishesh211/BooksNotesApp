@@ -1,4 +1,4 @@
-package com.example.booksnotesapp
+package com.example.booksnotesapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
