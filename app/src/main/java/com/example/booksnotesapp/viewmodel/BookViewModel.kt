@@ -17,7 +17,7 @@ class BookViewModel @Inject constructor(
     private val bookRepository: BookRepository
     ): ViewModel() {
 
-    val books: Flow<Book> = bookRepository.getBooksFromRoom()
+    val books = bookRepository.getBooksFromRoom()
     var book = Book(0,"","")
     var showDialog by mutableStateOf(false)
 

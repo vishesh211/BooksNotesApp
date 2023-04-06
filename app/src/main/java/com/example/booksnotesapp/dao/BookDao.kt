@@ -1,7 +1,7 @@
 package com.example.booksnotesapp.dao
 
 import androidx.room.*
-import androidx.room.OnConflictStrategy.Companion.IGNORE
+import androidx.room.OnConflictStrategy.IGNORE
 import com.example.booksnotesapp.models.Book
 import com.example.booksnotesapp.utils.Constants.BOOK_TABLE
 import kotlinx.coroutines.flow.Flow
@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 interface BookDao {
 
     @Query("SELECT * FROM $BOOK_TABLE ORDER BY id ASC")
-    fun getBooks(): Flow<Book>
+    fun getBooks(): Flow<List<Book>>
 
     @Query("SELECT * FROM $BOOK_TABLE WHERE id = :id")
     suspend fun getBook(id: Int): Book
