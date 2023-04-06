@@ -1,11 +1,12 @@
 def dep_versions = [:]
 
-dep_versions.hilt = "2.43.1"
+dep_versions.kotlin = "1.7.0"
+dep_versions.hilt = "2.45"
 
 dep_versions.lifecycle = "2.5.1"
-dep_versions.compose = "2.5.1"
-dep_versions.hilt = "2.44"
+dep_versions.compose = "1.4.0"
 dep_versions.room_version = "2.4.3"
 dep_versions.hilt_navigation_compose_version = '1.1.0-alpha01'
+dep_versions.compose_bom_version = "2023.03.00"
 
 ext.dep_versions = dep_versions

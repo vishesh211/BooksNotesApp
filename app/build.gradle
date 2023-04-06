@@ -39,7 +39,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.2.0'
+        kotlinCompilerExtensionVersion dep_versions.compose
     }
     packagingOptions {
         resources {
@@ -52,16 +52,19 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-    implementation "androidx.compose.ui:ui:$compose_ui_version"
-    implementation "androidx.compose.ui:ui-tooling-proomreview:$compose_ui_version"
-    implementation 'androidx.compose.material:material:1.2.0'
+    implementation 'androidx.activity:activity-compose:1.7.0'
+    implementation "androidx.compose.ui:ui:$dep_versions.compose"
+    implementation "androidx.compose.ui:ui-tooling-preview:$dep_versions.compose"
+    implementation "androidx.compose.material:material:$dep_versions.compose"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$dep_versions.compose"
+    debugImplementation "androidx.compose.ui:ui-tooling:$dep_versions.compose"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$dep_versions.compose"
+//    implementation platform("androidx.compose:compose-bom:$dep_versions.compose_bom_version")
+    implementation "com.google.android.material:material:1.7.0"
+
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$dep_versions.lifecycle"
@@ -83,15 +86,8 @@ dependencies {
     implementation "androidx.hilt:hilt-navigation-compose:$dep_versions.hilt_navigation_compose_version"
 
 
-    //room
-    implementation "androidx.room:room-runtime:$dep_versions.room_version"
-    implementation "androidx.room:room-ktx:$dep_versions.room"
 
     // To use Kotlin annotation processing tool (kapt)
     kapt "androidx.room:room-compiler:$dep_versions.room_version"
 
-}
-// Allow references to generated code
-kapt {
-    correctErrorTypes true
 }
