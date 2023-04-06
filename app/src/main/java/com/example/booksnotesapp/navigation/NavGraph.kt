@@ -6,6 +6,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.booksnotesapp.presentation.books.BooksScreen
 import com.example.booksnotesapp.utils.Constants.BOOK_ID
 
 @Composable
@@ -17,7 +18,13 @@ fun NavGraph(
         startDestination = Screen.BooksScreen.route
     ) {
         composable(route = Screen.BooksScreen.route) {
-
+            BooksScreen(
+                navigateToUpdateScreen = { bookId ->
+                    navController.navigate(
+                        route = "${Screen.UpdateBookScreen.route}/${bookId}"
+                    )
+                }
+            )
         }
 
         composable(route = "${Screen.UpdateBookScreen.route}/{$BOOK_ID}", arguments = listOf(

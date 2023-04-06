@@ -5,4 +5,5 @@ object Constants {
     const val BOOK_SCREEN = "books"
     const val UPDATE_BOOK_SCREEN = "Update book"
     const val BOOK_ID = "bookId"
+    const val DELETE_BOOK = "Delete Book"
 }
