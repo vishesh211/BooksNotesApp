@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.booksnotesapp.presentation.books.BooksScreen
+import com.example.booksnotesapp.presentation.update_book.UpdateBookScreen
 import com.example.booksnotesapp.utils.Constants.BOOK_ID
 
 @Composable
@@ -32,7 +33,10 @@ fun NavGraph(
                 type = NavType.IntType
             }
         )) {
-
+            val bookId = it.arguments?.getInt(BOOK_ID) ?: 0
+            UpdateBookScreen(bookId = bookId) {
+                navController.popBackStack()
+            }
         }
     }
 }
