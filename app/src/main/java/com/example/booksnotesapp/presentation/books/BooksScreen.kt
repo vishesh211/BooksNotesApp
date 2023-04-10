@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.booksnotesapp.models.Book
+import com.example.booksnotesapp.presentation.books.components.AddBookAlertDialog
 import com.example.booksnotesapp.utils.Constants.BOOK_SCREEN
 import com.example.booksnotesapp.utils.Constants.DELETE_BOOK
 import com.example.booksnotesapp.viewmodel.BookViewModel
@@ -37,8 +38,9 @@ fun BooksScreen(
             BooksTopBar()
         },
         floatingActionButton = {
-            AddBookFloatingActionButton(openDialog = {
-                viewModel.openDialog()
+            AddBookFloatingActionButton(
+                openDialog = {
+                    viewModel.openDialog()
             })
         }
     ) {
@@ -49,6 +51,15 @@ fun BooksScreen(
                 viewModel.deleteBook(book)
             },
             navigateToUpdateScreen = navigateToUpdateScreen
+        )
+        AddBookAlertDialog(
+            openDialog = viewModel.showDialog,
+            closeDialog = {
+                viewModel.closeDialog()
+            },
+            addBook = { book ->
+                viewModel.addBook(book)
+            }
         )
     }
 }
